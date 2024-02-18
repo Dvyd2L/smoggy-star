@@ -14,7 +14,7 @@
   const select$ = document.querySelector("select");
   const toggleTheme = (ev: Event) => {
     const root$ = document.documentElement;
-    const value = ev.target.value;
+    const value = (ev.target as HTMLSelectElement)?.value;
     root$.setAttribute("custom-theme", value);
     if (value === "light") {
       root$.setAttribute("data-bs-theme", value);
