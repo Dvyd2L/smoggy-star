@@ -7,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es-ES" data-bs-theme="dark" custom-theme="red">
+<html lang="es-ES" data-bs-theme="dark" custom-theme="dark" custom-hue="0">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -71,8 +71,44 @@ const { title } = Astro.props;
     --color-text: crimson;
   }
 
+  [custom-hue="0"] {
+    --hue: 0turn;
+  }
+  [custom-hue="0.1"] {
+    --hue: .1turn;
+  }
+  [custom-hue="0.2"] {
+    --hue: .2turn;
+  }
+  [custom-hue="0.3"] {
+    --hue: .3turn;
+  }
+  [custom-hue="0.4"] {
+    --hue: .4turn;
+  }
+  [custom-hue="0.5"] {
+    --hue: .5turn;
+  }
+  [custom-hue="0.6"] {
+    --hue: .6turn;
+  }
+  [custom-hue="0.7"] {
+    --hue: .7turn;
+  }
+  [custom-hue="0.8"] {
+    --hue: .8turn;
+  }
+  [custom-hue="0.9"] {
+    --hue: .9turn;
+  }
+  @property --hue {
+    syntax: <angle>;
+    inherit: true;
+    initial-value: 0;
+  }
   * {
     background-color: var(--color-background);
     color: var(--color-text);
+    filter: hue-rotate(var(--hue));
   }
 </style>
