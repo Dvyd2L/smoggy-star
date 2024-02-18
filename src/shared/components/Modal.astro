@@ -18,7 +18,7 @@ const label = "cerrar";
 <script>
   const dialog$ = document.querySelector("dialog");
   const closeBtn$ = document.querySelector("button");
-  const modal = dialog$.getAttribute("data-modal");
+  const modal = dialog$?.getAttribute("data-modal");
   const showModal = () => modal && dialog$?.showModal();
   const closeDialog = () => dialog$?.close();
   closeBtn$?.addEventListener("click", () => closeDialog);
