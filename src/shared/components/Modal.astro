@@ -1,0 +1,69 @@
+---
+interface Props {
+  modal?: boolean;
+}
+const { modal } = Astro.props;
+const label = "cerrar";
+---
+
+<dialog data-modal={modal}>
+  <menu>
+    <button type="button" aria-label={label} title={label}>❌</button>
+  </menu>
+  <article>
+    <slot />
+  </article>
+</dialog>
+
+<script>
+  const dialog$ = document.querySelector("dialog");
+  const closeBtn$ = document.querySelector("button");
+  const modal = dialog$.getAttribute("data-modal");
+  const showModal = () => modal && dialog$?.showModal();
+  const closeDialog = () => dialog$?.close();
+  closeBtn$?.addEventListener("click", () => closeDialog);
+  showModal();
+</script>
+
+<style>
+  dialog {
+    height: 66dvh;
+    width: 50dvw;
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    padding: 0;
+    border: none;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px) grayscale(1);
+    background-color: rgb(var(--color-bg) / 0.8);
+    &::backdrop {
+      backdrop-filter: blur(5px) grayscale(1);
+      background-color: #0008;
+      cursor: not-allowed;
+    }
+    & > menu {
+      width: 100%;
+      height: 2rem;
+      top: 0;
+      position: sticky;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      background-color: transparent;
+      padding: 0.5rem;
+      & > button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+    }
+    & > article {
+      overflow: auto;
+      scrollbar-width: none;
+      height: calc(100% - 2rem);
+      padding: 1rem;
+      padding-top: 0;
+    }
+  }
+</style>

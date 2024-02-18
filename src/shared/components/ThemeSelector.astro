@@ -1,0 +1,34 @@
+---
+
+---
+
+<select>
+  <option value="light">Light</option>
+  <option value="dark">Dark</option>
+  <option value="red">Red</option>
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</select>
+
+<script>
+  const select$ = document.querySelector("select");
+  const toggleTheme = (ev: Event) => {
+    const root$ = document.documentElement;
+    const value = ev.target.value;
+    root$.setAttribute("custom-theme", value);
+    if (value === "light") {
+      root$.setAttribute("data-bs-theme", value);
+    }
+    if (value === "dark") {
+      root$.setAttribute("data-bs-theme", value);
+    }
+  };
+  select$?.addEventListener("change", toggleTheme);
+</script>
+
+<style>
+  select {
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+</style>
