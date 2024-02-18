@@ -1,0 +1,18 @@
+---
+
+---
+
+<label>
+    <span>Hue</span>
+  <input type="range" name="hue" id="hue" min="0" max="0.9" step="0.1" />
+</label>
+
+<script>
+  const hue$ = document.querySelector("#hue");
+  const root$ = document.documentElement;
+  const changeHue = (ev: Event) => {
+    const value = (ev.target as HTMLInputElement)?.value;
+    root$.setAttribute("custom-hue", value);
+  };
+  hue$?.addEventListener("change", changeHue);
+</script>
