@@ -1,8 +1,0 @@
- <svg class="tree-svg" viewBox="0 0 2556 3440" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="tree-svg__bottom" d="M1278.07 3439.61L1278.07 1717" stroke="#341F37" stroke-width="3.21"/>
-                <path class="tree-svg__top tree-svg__branches" data-position="top" d="M1278.07 1722.61L1278.07 0" stroke="#341F37" stroke-width="3.21"/>
-                <path class="tree-svg__left tree-svg__branches" data-position="left" d="M1278.07 1716.2L2 651.193" stroke="#341F37" stroke-width="3.21"/>
-                <path class="tree-svg__left-top tree-svg__branches" data-position="left-top" d="M1278.07 1716.2L552.609 176.432" stroke="#341F37" stroke-width="3.21"/>
-                <path class="tree-svg__right-top tree-svg__branches" data-position="right-top" d="M1278.08 1716.2L2002.43 176.432" stroke="#341F37" stroke-width="3.21"/>
-                <path class="tree-svg__right tree-svg__branches" data-position="right" d="M1278.07 1716.2L2554.09 651.193" stroke="#341F37" stroke-width="3.21"/>
-            </svg>
