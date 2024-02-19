@@ -7,7 +7,8 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es-ES" data-bs-theme="dark" custom-theme="dark" custom-hue="0">
+<html lang="es-ES" data-bs-theme="dark" custom-hue="0">
+  <!-- custom-theme="dark"  -->
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -32,8 +33,9 @@ const { title } = Astro.props;
 </html>
 
 <style is:global>
+  @import "../../../public/assets/styles/themes";
   :root {
-    --color-bg: canvas;
+    /* --color-bg: canvas; */
     font-family:
       system-ui,
       -apple-system,
@@ -48,17 +50,17 @@ const { title } = Astro.props;
       sans-serif;
   }
 
-  [data-bs-theme="light"] {
+  /* [data-bs-theme="light"] {
     --color-background: rgb(222, 222, 222);
     --color-text: rgb(30, 30, 30);
-    /* color-scheme: light; */
+    color-scheme: light;
   }
   [data-bs-theme="dark"] {
     --color-background: rgb(25, 25, 25);
     --color-text: rgb(200, 200, 200);
-    /* color-scheme: dark; */
-  }
-  [custom-theme="green"] {
+    color-scheme: dark;
+  } */
+  /* [custom-theme="green"] {
     --color-background: darkgreen;
     --color-text: lightgreen;
   }
@@ -69,37 +71,37 @@ const { title } = Astro.props;
   [custom-theme="red"] {
     --color-background: rgb(56, 0, 0);
     --color-text: crimson;
-  }
+  } */
 
   [custom-hue="0"] {
     --hue: 0turn;
   }
   [custom-hue="0.1"] {
-    --hue: .1turn;
+    --hue: 0.1turn;
   }
   [custom-hue="0.2"] {
-    --hue: .2turn;
+    --hue: 0.2turn;
   }
   [custom-hue="0.3"] {
-    --hue: .3turn;
+    --hue: 0.3turn;
   }
   [custom-hue="0.4"] {
-    --hue: .4turn;
+    --hue: 0.4turn;
   }
   [custom-hue="0.5"] {
-    --hue: .5turn;
+    --hue: 0.5turn;
   }
   [custom-hue="0.6"] {
-    --hue: .6turn;
+    --hue: 0.6turn;
   }
   [custom-hue="0.7"] {
-    --hue: .7turn;
+    --hue: 0.7turn;
   }
   [custom-hue="0.8"] {
-    --hue: .8turn;
+    --hue: 0.8turn;
   }
   [custom-hue="0.9"] {
-    --hue: .9turn;
+    --hue: 0.9turn;
   }
   @property --hue {
     syntax: <angle>;
@@ -107,7 +109,7 @@ const { title } = Astro.props;
     initial-value: 0;
   }
   * {
-    background-color: var(--color-background);
+    background-color: var(--);
     color: var(--color-text);
   }
   .hue {
