@@ -2,7 +2,8 @@
 
 ---
 
-<select>
+<select class="form-select" aria-label="theme selector">
+  <option selected>Selecciona un tema</option>
   <option value="light">Light</option>
   <option value="dark">Dark</option>
   <option value="red">Red</option>
@@ -15,20 +16,21 @@
   const toggleTheme = (ev: Event) => {
     const root$ = document.documentElement;
     const value = (ev.target as HTMLSelectElement)?.value;
-    root$.setAttribute("custom-theme", value);
-    if (value === "light") {
-      root$.setAttribute("data-bs-theme", value);
-    }
-    if (value === "dark") {
-      root$.setAttribute("data-bs-theme", value);
-    }
+    // root$.setAttribute("custom-theme", value);
+    root$.setAttribute("data-bs-theme", value);
+    // if (value === "light") {
+    //   root$.setAttribute("data-bs-theme", value);
+    // }
+    // if (value === "dark") {
+    //   root$.setAttribute("data-bs-theme", value);
+    // }
   };
   select$?.addEventListener("change", toggleTheme);
 </script>
 
 <style>
-  select {
+  /* select {
     border-radius: 1rem;
     padding: 0.5rem;
-  }
+  } */
 </style>
